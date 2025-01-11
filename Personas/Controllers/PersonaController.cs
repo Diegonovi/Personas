@@ -2,7 +2,7 @@
 using Personas.Models;
 using Personas.Service;
 
-namespace Personas.Controller;
+namespace Personas.Controllers;
 
 [Route("persona")]
 [ApiController]

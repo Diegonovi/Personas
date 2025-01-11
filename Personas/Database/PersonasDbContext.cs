@@ -6,6 +6,7 @@ namespace Personas.Database;
 public class PersonasDbContext(DbContextOptions<PersonasDbContext> options)
     : DbContext(options)
     {
+    
     public DbSet<Persona> Personas { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
