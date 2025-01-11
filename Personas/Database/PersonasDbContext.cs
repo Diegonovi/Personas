@@ -3,10 +3,10 @@ using Personas.Models;
 
 namespace Personas.Database;
 
-public class PersonasDBContext(DbContextOptions<PersonasDBContext> options)
+public class PersonasDbContext(DbContextOptions<PersonasDbContext> options)
     : DbContext(options)
     {
-    public DbSet<Persona> Heroes { get; set; }
+    public DbSet<Persona> Personas { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
