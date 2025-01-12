@@ -5,6 +5,7 @@ using Personas.Database;
 using Personas.Repository;
 using Personas.Service;
 using Serilog;
+using StackExchange.Redis;
 
 var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production";
 
@@ -16,6 +17,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 SetUpLogger(configuration);
 SetUpSwagger();
+
+builder.Services.AddSingleton<IConnectionMultiplexer>(
+    await ConnectionMultiplexer.ConnectAsync("localhost")
+);
+
+builder.Services.AddHttpClient();
 
 builder.Services.AddControllers();
 
