@@ -4,10 +4,6 @@ using Personas.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Development");
-
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<PersonasDbContext> (options =>
